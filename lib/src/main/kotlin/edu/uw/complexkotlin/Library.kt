@@ -8,13 +8,14 @@ package edu.uw.complexkotlin
 // use fold() to compress the array of strings down into a single string.
 // the final string should look like FIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZ for 0..15.
 // store this lambda into 'fizzbuzz' so that the tests can call it
-//
+//Extra Credit: When the number is evenly divisible by 7, return DOH!
 val fizzbuzz : (IntRange) -> String = { 
     range -> range.map { num ->
         when {
             num % 3 == 0 && num % 5 == 0 -> "FIZZBUZZ"
             num % 3 == 0 -> "FIZZ"
             num % 5 == 0 -> "BUZZ"
+            num % 7 == 0 -> "DOH!"
             else -> ""
         }
     }.fold("") { acc, str -> acc + str}
@@ -70,6 +71,13 @@ enum class Philosopher {
         }
     }
 }
+
+//Extra Credit:
+// Seneca the Younger was a philosopher write and playwright that lived from 4 BC to 65 AD under the Roman Empire. 
+//He was known for Tutoring the Roman Emperor Nero, and his alleged plot to kill Nero lead to his own death. 
+//He is associated with Stoicism,  a school of philosophy which believes that the practice of virtue, or good morals, 
+//is the most important thing needed to live a good life and to have a good soul.
+
 
 // create an class "Command" that can be used as a function.
 // To do this, provide an "invoke()" function that takes a 
